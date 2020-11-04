@@ -1,0 +1,4 @@
+D:\Test\NerdySoftTest\NerdySoftTest\obj\Debug\netcoreapp2.2\NerdySoftTest.csprojAssemblyReference.cache
+D:\Test\NerdySoftTest\NerdySoftTest\obj\Debug\netcoreapp2.2\NerdySoftTest.AssemblyInfoInputs.cache
+D:\Test\NerdySoftTest\NerdySoftTest\obj\Debug\netcoreapp2.2\NerdySoftTest.AssemblyInfo.cs
+D:\Test\NerdySoftTest\NerdySoftTest\obj\Debug\netcoreapp2.2\NerdySoftTest.csproj.CoreCompileInputs.cache

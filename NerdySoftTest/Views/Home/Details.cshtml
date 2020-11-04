@@ -1,0 +1,30 @@
+﻿@model NerdySoftTest.Models.DetailsView
+
+@{
+        ViewBag.Title = Model.Announcement.Title;
+    }
+    <h2>Announcement @Model.Announcement.Title</h2>
+    <div>
+        <dl class="dl-horizontal">
+            <dt>Description</dt>
+            <dd>@Model.Announcement.Description</dd>
+
+            <dt>Added</dt>
+            <dd>@Model.Announcement.DateAdded</dd>
+        </dl>
+        <tr>
+            <td><a href="~/Home/Edit/@Model.Announcement.Id"><input type="submit" class="btn btn-outline-info" value="Edit" /></a></td>
+            <td><a href="~/Home/Delete/@Model.Announcement.Id"><input type="submit" class="btn btn-outline-danger" value="Delete" /></a></td>
+        </tr>
+
+        <table class="table">
+        <tr>
+            <th>List similar of announcements</th>
+            <th></th>
+            @foreach (var u in Model.ListOfAnnouncements)
+            {
+            <tr><td>@u.Title</td><td><a href="~/Home/Details/@u.Id">View Details</a></td></tr>
+        }
+        </table>
+
+    </div>

@@ -1,0 +1,24 @@
+﻿@model NerdySoftTest.Models.Announcement
+@{
+    ViewBag.Title = "Delete an announcement";
+}
+<head>
+    <style>
+        .btn {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<div>
+    <div>
+        <form asp-controller="Home" asp-action="Delete" method="post">
+            <div class="form-group">
+                <dt>Are you sure to delete announcement "@Html.DisplayFor(model => model.Title)" ?</dt>
+                <input type="submit" class="btn btn-outline-danger" value="Yes, delete!" />
+            </div>
+        </form>
+        <a href="~/Home/Index/"><input type="submit" class="btn btn-outline-info" value="No, go back" /></a>
+        
+    </div>
+</div>
