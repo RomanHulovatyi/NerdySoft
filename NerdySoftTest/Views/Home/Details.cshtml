@@ -3,6 +3,16 @@
 @{
         ViewBag.Title = Model.Announcement.Title;
     }
+<head>
+    <style>
+        h5{
+            margin-top: 20px;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
     <h2>@Model.Announcement.Title</h2>
     <div>
         <dl class="dl-horizontal">
@@ -16,15 +26,16 @@
             <td><a href="~/Home/Edit/@Model.Announcement.Id"><input type="submit" class="btn btn-outline-info" value="Edit" /></a></td>
             <td><a href="~/Home/Delete/@Model.Announcement.Id"><input type="submit" class="btn btn-outline-danger" value="Delete" /></a></td>
         </tr>
-
-        <table class="table">
-        <tr>
-            <th>List similar of announcements</th>
-            <th></th>
-            @foreach (var u in Model.ListOfAnnouncements)
-            {
-            <tr><td>@u.Title</td><td><a href="~/Home/Details/@u.Id">View Details</a></td></tr>
-        }
-        </table>
-
-    </div>
+        <div />
+        <div>
+            <h5>List similar of announcements</h5>
+            <table class="table">
+                <tr>
+                    @foreach (var u in Model.ListOfAnnouncements)
+                    {
+                    <tr><td>@u.Title</td><td><a href="~/Home/Details/@u.Id">View Details</a></td></tr>
+                }
+                </table>
+            </div>
+    </body>
+    
