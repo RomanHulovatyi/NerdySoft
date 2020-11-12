@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using NerdySoftTest.Data.Repository;
 using NerdySoftTest.Models;
 
 
@@ -16,26 +17,17 @@ namespace NerdySoftTest.Controllers
     public class HomeController : Controller
     {
         AnnouncementContext db;
-        public HomeController(AnnouncementContext context)
+        IRepository repo;
+        public HomeController(AnnouncementContext context, IRepository repo)
         {
             db = context;
+            this.repo = repo;
         }
 
-        public async Task<IActionResult> IndexAsync(int page=1)
+        public async Task<IActionResult> IndexAsync(int page = 1)
         {
-            int pageSize = 4;
-
-            IQueryable<Announcement> source = db.Announcements.OrderByDescending(t => t.DateAdded);
-            var count = await source.CountAsync();
-            var items = await source.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
-
-            PageViewModel pageViewModel = new PageViewModel(count, page, pageSize);
-            IndexViewModel viewModel = new IndexViewModel
-            {
-                PageViewModel = pageViewModel,
-                Announ = items
-            };
-            return View(viewModel);
+            var announcements = await repo.GetAllAnnouncementAsync(page);
+            return View(announcements);
         }
 
         public IActionResult Add()
@@ -53,30 +45,8 @@ namespace NerdySoftTest.Controllers
         
         public async Task<IActionResult> Details(int? id)
         {
-            if (id != null)
-            {
-                Announcement announcement = await db.Announcements.FirstOrDefaultAsync(p => p.Id == id);
-                var splitedTitle = announcement.Title.Split(" ");
-                List<Announcement> temp = new List<Announcement>(); 
-                foreach (var word in splitedTitle)
-                {
-                    temp.AddRange(db.Announcements.Where(x => x.Title.ToLower().Contains(word.ToLower()) && x.Id != id).ToList());
-                }
-                if(announcement.Description != null)
-                {
-                    var splitedDescription = announcement.Description.Split(" ");
-                    List<Announcement> tempo = new List<Announcement>();
-                    foreach (var word in splitedDescription)
-                    {
-                        temp.AddRange(db.Announcements.Where(x => x.Description.ToLower().Contains(word.ToLower()) && x.Id != id).ToList());
-                    }
-                }
-                
-                DetailsView source = new DetailsView { Announcement = announcement, ListOfAnnouncements = temp.Take(3).ToList() };
-                if (announcement != null)
-                    return View(source);
-            }
-            return NotFound();
+            var view = await repo.ViewDetailsAsync((int)id);
+            return View(view);
         }
 
         [HttpGet]
@@ -101,7 +71,6 @@ namespace NerdySoftTest.Controllers
 
             db.SaveChanges();
 
-            ViewData["message"] = "Blog post edited successfully.";
             return RedirectToAction("Index");
         }
 

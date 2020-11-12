@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using NerdySoftTest.Data.Repository;
 using NerdySoftTest.Models;
 
 namespace NerdySoftTest
@@ -25,6 +26,9 @@ namespace NerdySoftTest
         {
             string connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<AnnouncementContext>(options => options.UseSqlServer(connection));
+
+            services.AddTransient<IRepository, Repository>();
+
             services.AddControllersWithViews();
         }
 

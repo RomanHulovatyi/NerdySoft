@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2xf9jyj3o0hxdvhradXU9wodS/IP0wWh9Fp0o2PtNGGvvC2c0i+kt9wMTz2NCHcuKdfCezjD6AvmUjp4GVE/Xg==",
+  "dgSpecHash": "EUNrwCNk5XN7n+XrJiThktLHu5iJg8usA0w75ANteGxY92jhAoXjdHMLu742VT0zxbFQvYwtdoBpGU4jpo3yYQ==",
   "success": true,
-  "projectFilePath": "D:\\Test\\NerdySoftTest\\NerdySoftTest\\NerdySoftTest.csproj",
+  "projectFilePath": "E:\\Test\\NerdySoftTest\\NerdySoftTest\\NerdySoftTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Роман\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Роман\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

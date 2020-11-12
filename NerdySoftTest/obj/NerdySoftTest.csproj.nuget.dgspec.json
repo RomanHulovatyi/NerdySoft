@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Test\\NerdySoftTest\\NerdySoftTest\\NerdySoftTest.csproj": {}
+    "E:\\Test\\NerdySoftTest\\NerdySoftTest\\NerdySoftTest.csproj": {}
   },
   "projects": {
-    "D:\\Test\\NerdySoftTest\\NerdySoftTest\\NerdySoftTest.csproj": {
+    "E:\\Test\\NerdySoftTest\\NerdySoftTest\\NerdySoftTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Test\\NerdySoftTest\\NerdySoftTest\\NerdySoftTest.csproj",
+        "projectUniqueName": "E:\\Test\\NerdySoftTest\\NerdySoftTest\\NerdySoftTest.csproj",
         "projectName": "NerdySoftTest",
-        "projectPath": "D:\\Test\\NerdySoftTest\\NerdySoftTest\\NerdySoftTest.csproj",
+        "projectPath": "E:\\Test\\NerdySoftTest\\NerdySoftTest\\NerdySoftTest.csproj",
         "packagesPath": "C:\\Users\\Роман\\.nuget\\packages\\",
-        "outputPath": "D:\\Test\\NerdySoftTest\\NerdySoftTest\\obj\\",
+        "outputPath": "E:\\Test\\NerdySoftTest\\NerdySoftTest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "E:\\Microsoft\\Xamarin\\NuGet\\",
